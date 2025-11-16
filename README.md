@@ -1,5 +1,5 @@
 # Fast Team Task
-Team Tasks API with FastAPI GraphQL 
+Team Tasks API with FastAPI and GraphQL 
 
 ## Todo
 - [ ] Implement 4 API with FastAPI (uvicorn) with in-memory database first:
