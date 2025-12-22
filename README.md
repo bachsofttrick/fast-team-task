@@ -2,11 +2,11 @@
 Team Tasks API with FastAPI and GraphQL 
 
 ## Todo
-- [ ] Implement 4 API with FastAPI (uvicorn) with in-memory database first:
+- [x] Implement 4 API with FastAPI (uvicorn) with in-memory database first:
   - [x] POST /teams - create a team
   - [x] GET /teams - list all teams
-  - [ ] POST /tasks - create a task
-  - [ ] GET /tasks?team_id= - list tasks for a team
+  - [x] POST /tasks - create a task
+  - [x] GET /tasks?team_id= - list tasks for a team
 ```
 team: {
   id: int
