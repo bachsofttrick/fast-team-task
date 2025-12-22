@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from models.task import Task
-from repository.task import TaskRepo
+from repositories.task import TaskRepo
 
 router = APIRouter(prefix="/tasks", tags=["Tasks"])
 

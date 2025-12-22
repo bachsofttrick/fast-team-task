@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from models.team import Team
-from repository.team import TeamRepo
+from repositories.team import TeamRepo
 
 router = APIRouter(prefix="/teams", tags=["Teams"])
 
