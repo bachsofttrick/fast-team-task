@@ -1,7 +1,6 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends
 from models.task import Task
-from repositories.task import TaskRepo
 from deps import RepoDep
 
 router = APIRouter(prefix="/tasks", tags=["Tasks"])

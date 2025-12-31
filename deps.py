@@ -3,6 +3,7 @@ from fastapi import Depends
 from repositories.team import TeamRepo
 from repositories.task import TaskRepo
 from strawberry.fastapi import BaseContext
+import strawberry
 
 class DependencyContext(BaseContext):
     def __init__(self):
@@ -19,3 +20,6 @@ RepoDep = Annotated[DependencyContext, Depends(DependencyContext)]
 
 def dependency_context(custom_context=Depends(DependencyContext)):
     return custom_context
+
+def repo_for_graphql(info: strawberry.Info) -> DependencyContext:
+    return info.context

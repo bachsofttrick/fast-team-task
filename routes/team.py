@@ -1,7 +1,6 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends
 from models.team import Team
-from repositories.team import TeamRepo
 from deps import RepoDep
 
 router = APIRouter(prefix="/teams", tags=["Teams"])
