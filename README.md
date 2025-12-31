@@ -26,7 +26,7 @@ task: {
   - Mutations
   - [x] createTeam(name: String!): Team
   - [x] createTask(teamId: Int!, title: String!): Task
-- [ ] Extra: Add Dependency Injection
+- [x] Extra: Add Dependency Injection
 ```
 def get_db():
   db = SessionLocal()
