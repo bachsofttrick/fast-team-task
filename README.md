@@ -19,12 +19,12 @@ task: {
   completed: bool
 }
 ```
-- [ ] Implement /graphql with strawberry-graphql
+- [x] Implement /graphql with strawberry-graphql
   - Queries
-  - [ ] teams: [Team]
-  - [ ] tasks(teamId: Int): [Task]  
+  - [x] teams: [Team]
+  - [x] tasks(teamId: Int): [Task]  
   - Mutations
-  - [ ] createTeam(name: String!): Team
-  - [ ] createTask(teamId: Int!, title: String!): Task
+  - [x] createTeam(name: String!): Team
+  - [x] createTask(teamId: Int!, title: String!): Task
 - [ ] Extra: Implement SQLite with SQLAlchemy
   - [ ] Migration with Alembic

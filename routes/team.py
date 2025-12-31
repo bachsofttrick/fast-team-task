@@ -13,6 +13,11 @@ def add_team(team: Team):
     id = TeamRepo.add(team)
     return {"id": id}
 
+@router.get("/{id}")
+def get_team(id: int):
+    result = TeamRepo.get(id)
+    return result
+
 @router.put("/{id}")
 def change_team(id: int, team: Team):
     updated = TeamRepo.update(id, team)

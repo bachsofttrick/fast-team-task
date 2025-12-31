@@ -8,6 +8,12 @@ teams.append(team1)
 
 class TeamRepo():
     @staticmethod
+    def get(id: int) -> Team:
+        # This is like FirstOrDefault of C# or find of JS
+        result = next((team for team in teams if team.id == id), None)
+        return result
+        
+    @staticmethod
     def getAll() -> list[Team]:
         return teams
 
@@ -22,23 +28,17 @@ class TeamRepo():
     @staticmethod
     def update(id: int, team: Team) -> bool:
         updated = False
-        for old_team in teams:
-            if old_team.id == id:
-                old_team.name = team.name
-                updated = True
+        result = next((team for team in teams if team.id == id), None)
+        if result is not None:
+            result.name = team.name
+            updated = True
         
         return updated
 
     @staticmethod
     def delete(id: int) -> bool:
         global teams
-        deleted = False
-        new_teams = []
-        for old_team in teams:
-            if old_team.id != id:
-                new_teams.append(old_team)
-            else:
-                deleted = True
-        
+        new_teams = [team for team in teams if team.id != id]
+        deleted = len(new_teams) != len(teams)
         teams = new_teams
         return deleted

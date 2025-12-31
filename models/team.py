@@ -1,5 +1,10 @@
-from pydantic import BaseModel
+import strawberry
 
-class Team(BaseModel):
+@strawberry.type
+class Team():
     id: int
     name: str
+
+@strawberry.input
+class TeamInput(Team):
+    pass

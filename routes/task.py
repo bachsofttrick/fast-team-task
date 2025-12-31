@@ -13,6 +13,11 @@ def add_task(task: Task):
     id = TaskRepo.add(task)
     return {"id": id}
 
+@router.get("/{id}")
+def get_task(id: int):
+    result = TaskRepo.get(id)
+    return result
+
 @router.put("/{id}")
 def change_task(id: int, task: Task):
     updated = TaskRepo.update(id, task)
