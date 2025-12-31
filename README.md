@@ -26,5 +26,17 @@ task: {
   - Mutations
   - [x] createTeam(name: String!): Team
   - [x] createTask(teamId: Int!, title: String!): Task
+- [ ] Extra: Add Dependency Injection
+def get_db():
+  db = SessionLocal()
+  try:
+    yield db
+  finally:
+    db.close()
+def get_team_repo(db: Session = Depends(get_db)) -> TeamRepo:
+  return TeamRepo(db)
+RepoDep = Annotated[TeamRepo, Depends(get_team_repo)]
+def get_teams(repo: RepoDep):
+
 - [ ] Extra: Implement SQLite with SQLAlchemy
   - [ ] Migration with Alembic
